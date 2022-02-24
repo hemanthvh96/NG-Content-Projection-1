@@ -1,0 +1,14 @@
+<h2>Content Projection</h2>
+<p>Reusable Card Component</p>
+
+<ng-container id="players-list" *ngFor="let player of players; let i = index">
+  <app-card [title]="player.name" class="card">
+    <div class="body-details">
+      <p>Age : {{ player.age }}</p>
+      <p>Country : {{ player.country }}</p>
+    </div>
+    <div class="footer">
+      <button (click)="onDeletePlayer(i)">Delete</button>
+    </div>
+  </app-card>
+</ng-container>
